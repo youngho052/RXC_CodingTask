@@ -28,6 +28,8 @@ class GoodsListViewModel @Inject constructor(
     val goodsListUiState: LiveData<GoodsListUiState>
         get() = _goodsListUiState
 
+    val goodsList:MutableList<LikedGoodsListResponse> = mutableListOf()
+
     init {
         getGoodsListItem()
     }

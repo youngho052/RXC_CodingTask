@@ -36,8 +36,6 @@ class GridAdapter(
             notifyDataSetChanged()
         }
 
-//        holder.imageView.setImageDrawable(ColorDrawable(Color.RED))
-
         holder.nameTextView.text = listItem.goodsListResponse.name
         holder.priceTextView.text = "${priceFormatter.format(listItem.goodsListResponse.price)}원"
         Glide
@@ -49,7 +47,7 @@ class GridAdapter(
         holder.likeBind(listItem.like)
 
         if(listItem.goodsListResponse.discountRate > 0) {
-            holder.bind(
+            holder.rateBind(
                 rate ="${listItem.goodsListResponse.discountRate}%",
                 consumerPrice = "${priceFormatter.format(listItem.goodsListResponse.consumerPrice)}원"
             )
@@ -87,14 +85,12 @@ class GridAdapter(
             }
         }
 
-        fun bind(rate: String, consumerPrice: String) {
+        fun rateBind(rate: String, consumerPrice: String) {
             priceView.removeView(discountRateView)
             listItemView.removeView(consumerPriceView)
 
             setDisCountRate(rate)
             setConsumerPrice(consumerPrice)
-
-//            nameTextView.maxLines = 1
         }
 
         private fun setDisCountRate(rate: String) {

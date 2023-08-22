@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 2)
-        recyclerView.addItemDecoration(GridSpacingItemDecoration(2, 16, true))
+        recyclerView.addItemDecoration(GridSpacingItemDecoration(16))
 
         goodsListViewModel.goodsListUiState.observe(this) {
             repeat(it.goodsList.size) { idx->
