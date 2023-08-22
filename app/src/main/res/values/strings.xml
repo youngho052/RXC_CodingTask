@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RXC</string>
+
+    <style name="BoldTextStyle">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="RegularTextStyle">
+        <item name="android:textStyle">normal</item>
+    </style>
+</resources>
